@@ -25,6 +25,14 @@ Registrar cambios del repositorio. Como una fotografía con autor, fecha y local
 Puntero que referencia el punto actual en el historial de cambios.
 ****
 ## **Clase 2**
+**Rama de git:**
+Es un snapshot, para bifurcaciones y desarrollo no lineal, colaborativo e independiente.
+
+**Conflictos a fusionar 2 Ramas:**
+Se da cuando Git no puede determinar que cambio es mas importante que otro.
+****
+## **Clase 3**
+
 # COMANDOS
 ## **Clase 1**
 **COMANDO: git init**
