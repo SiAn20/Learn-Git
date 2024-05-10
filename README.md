@@ -82,3 +82,31 @@ Ver el historial de commits en el repositorio Git.
 `2` solo ver descripcion de commits. `2` de forma grafica.
 ****
 ## **Clase 2**
+**COMANDO: git branch**
+1. git branch
+2. git branch -d `<nombre Rama>`
+3. git branch -D `<nombre Rama>`
+4. git branch `<nombre de nueva rama>`
+
+`1` ver ramas disponibles. `2` eliminar una rama. `3` eliminar una rama forzadamente. `4` crear nueva rama.
+
+**COMANDO: git switch**
+
+Ingresar o cambiar a una rama.
+1. git switch `<nombre Rama>`
+2. git switch -c `<nombre Rama>`
+
+`1` Solo ingresar. `2` crear e ingresar a la nueva rama.
+
+**COMANDO: git merge**
+
+Fucionar Ramas
+1. git merge --edit
+2. git merge --abort
+3. git merge --no-commit
+4. git merge `<nombre Rama>`
+5. git merge `<nombre Rama>` --no--ff
+
+`1` abre el editor antes de hacer commit. `2` cancelar una operación de fusión que se encuentra en curso. `3` evita el commit automatico. `4` trae los cambios de esa rama a la rama actual. `5` Git creará un commit de fusión adicional.
+****
+## **Clase 3**
