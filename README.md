@@ -35,6 +35,7 @@ git init
 ## git add
 Indica a Git que quieres incluir actualizaciones en un archivo/directorio. Pasa de Modified a Staged.
 ```bash
+git add .
 git add <file>
 ```
 ## git status
@@ -46,7 +47,6 @@ git status
 1. **Modified:** Archivos con cambios no confirmados.
 2. **Staged:** Archivo marcado como preparado para ser confirmado.
 3. **Commited:** Archivo grabado en el repositorio local (commit).
-
 ## git restore
 Restaura un archivo al estado del último commit.
  ```bash
@@ -88,13 +88,13 @@ git --graph --oneline
 ```
 **Head:** 
 Puntero que referencia el punto actual en el historial de cambios.
-
 ## git branch
 Ver ramas disponibles:
 ```bash
 git branch
+git branch -a
 ```
-Eliminar una rama:
+Eliminar una rama local:
   ```bash
 git branch -d <nombre Rama>
 git branch -D <nombre Rama>
@@ -108,7 +108,6 @@ Es un snapshot, para bifurcaciones y desarrollo no lineal, colaborativo e indepe
 
 **Conflictos a fusionar 2 Ramas:**
 Se da cuando Git no puede determinar que cambio es mas importante que otro.
-
 ## git switch
 Ingresar a una rama:
 ```bash 
@@ -138,4 +137,28 @@ git merge --no-commit
 Git creará un commit de fusión adicional:
  ```bash 
 git merge <nombre Rama> --no--ff
+```
+## git remote
+Enlazar o sincronizar un repositorio local con uno remoto:
+ ```bash 
+git remote add origin <URL repositorio GitHub>
+```
+Eliminar ramas remotas de mi repositorio local que ya no se usan:
+```bash 
+git remote prune origin
+```
+Ver que repositorios remotos estan enlazados con el repositorio local:
+```bash 
+git remote -v
+```
+## git push 
+Una vez que los repositorios esten enlazados se sicronizan los cambios del repositorio local y remoto, puede usarse uno de los siguientes:
+```bash 
+git push --all
+git push origin <nombre Rama>
+```
+## git clone
+Clonar un repositorio con todas sus ramas y archivos:
+```bash 
+git clone <URL repositorio GitHub>
 ```
