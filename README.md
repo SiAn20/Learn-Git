@@ -1,5 +1,8 @@
 # **CURSO GIT**
 # CONFIGURAR GIT
+**Git:**
+Sistema de control de versiones distribuido, cada desarrollador trabaja en una rama diferente. Posteriormente, estas ramas se fusionan de nuevo en la rama principal.
+
 Nombre de usuaio y correo electronico en Git que son el mismo que GitHub:
 ```bash
 git config --global user.name "<Tu nombre>"
@@ -9,11 +12,6 @@ git config --global user.email "<Tu correo>"
 ```bash
 git config --list
 ```
-# CONCEPTOS
-## **Clase 1**
-**Git:**
-Sistema de control de versiones distribuido, cada desarrollador trabaja en una rama diferente. Posteriormente, estas ramas se fusionan de nuevo en la rama principal.
-
 **repositorio:**
 Almacen de versiones de los ficheros de un proyecto y sus históricos.
 
@@ -21,27 +19,7 @@ Almacen de versiones de los ficheros de un proyecto y sus históricos.
 Sistema que registra cada cambio que hacemos, permite tener un historico de los cambios, cuando se hicieron y quien los hizo. Importante por rendimiento y es flexible.
 
 **CVS:**
-(Concurrent Version System}, es el primer control de versiones.
-
-**Estados de git:**
-1. **Modified:** Archivos con cambios no confirmados.
-2. **Staged:** Archivo marcado como preparado para ser confirmado.
-3. **Commited:** Archivo grabado en el repositorio local (commit).
-
-**Commit:** 
-Registrar cambios del repositorio. Como una fotografía con autor, fecha y localización.
-
-**Head:** 
-Puntero que referencia el punto actual en el historial de cambios.
-****
-## **Clase 2**
-**Rama de git:**
-Es un snapshot, para bifurcaciones y desarrollo no lineal, colaborativo e independiente.
-
-**Conflictos a fusionar 2 Ramas:**
-Se da cuando Git no puede determinar que cambio es mas importante que otro.
-****
-## **Clase 3**
+(Concurrent Version System), es el primer control de versiones.
 
 # COMANDOS
 ## git init
@@ -64,6 +42,11 @@ Descripción del árbol de trabajo y ver el estado de los archivos.
 ```bash
 git status
 ```
+**Estados de git:**
+1. **Modified:** Archivos con cambios no confirmados.
+2. **Staged:** Archivo marcado como preparado para ser confirmado.
+3. **Commited:** Archivo grabado en el repositorio local (commit).
+
 ## git restore
 Restaura un archivo al estado del último commit.
  ```bash
@@ -74,7 +57,10 @@ Quitar un archivo del área de staged y restaurarlo al estado del último commit
 git restore --staged <file>
 ```
 ## git commit
-Confirmar los cambios realizados en el repositorio.
+**Commit:** 
+Registrar cambios del repositorio. Como una fotografía con autor, fecha y localización.
+
+Confirmar los cambios realizados en el repositorio:
   ```bash
 git commit
 git commit -m "<descripción>"
@@ -100,6 +86,9 @@ git log --graph
 ```bash
 git --graph --oneline
 ```
+**Head:** 
+Puntero que referencia el punto actual en el historial de cambios.
+
 ## git branch
 Ver ramas disponibles:
 ```bash
@@ -114,6 +103,12 @@ Crear una nueva rama:
 ```bash
 git branch <nombre de nueva rama>
 ```
+**Rama de git:**
+Es un snapshot, para bifurcaciones y desarrollo no lineal, colaborativo e independiente.
+
+**Conflictos a fusionar 2 Ramas:**
+Se da cuando Git no puede determinar que cambio es mas importante que otro.
+
 ## git switch
 Ingresar a una rama:
 ```bash 
