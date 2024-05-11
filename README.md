@@ -1,5 +1,14 @@
 # **CURSO GIT**
-
+# CONFIGURAR GIT
+Nombre de usuaio y correo electronico en Git que son el mismo que GitHub:
+```bash
+git config --global user.name "<Tu nombre>"
+git config --global user.email "<Tu correo>"
+```
+ Comprobar configuracón de Git:
+```bash
+git config --list
+```
 # CONCEPTOS
 ## **Clase 1**
 **Git:**
