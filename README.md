@@ -1,3 +1,4 @@
+
 # **CURSO GIT**
 # CONFIGURAR GIT
 **Git:**
@@ -47,6 +48,23 @@ git status
 1. **Modified:** Archivos con cambios no confirmados.
 2. **Staged:** Archivo marcado como preparado para ser confirmado.
 3. **Commited:** Archivo grabado en el repositorio local (commit).
+## git rm
+Eliminar archivos del índice de Git y del árbol de trabajo.
+```bash
+git rm <file>
+git rm <file1> <file1>
+```
+Para conservar el archivo y solo eliminar el ultimo add:
+```bash
+git rm --cached <file>
+```
+## git checkout
+Cambiar de rama o restaurar archivos en el árbol de trabajo.
+
+Restaurar un Archivo a un Commit Específico:
+```bash
+git checkout <commitID>
+```
 ## git restore
 Restaura un archivo al estado del último commit.
  ```bash
@@ -139,7 +157,7 @@ Git creará un commit de fusión adicional:
 git merge <nombre Rama> --no--ff
 ```
 ## git remote
-Enlazar o sincronizar un repositorio local con uno remoto:
+Enlazar un repositorio local con uno remoto, un repositorio local puede tener enlazados varios repsitorios remotos:
  ```bash 
 git remote add origin <URL repositorio GitHub>
 ```
@@ -150,6 +168,10 @@ git remote prune origin
 Ver que repositorios remotos estan enlazados con el repositorio local:
 ```bash 
 git remote -v
+```
+Eliminar un enlace:
+```bash 
+git remote remove origin
 ```
 ## git push 
 Una vez que los repositorios esten enlazados se sicronizan los cambios del repositorio local y remoto, puede usarse uno de los siguientes:
