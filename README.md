@@ -1,3 +1,4 @@
+
 # **CURSO GIT**
 # CONFIGURAR GIT
 **Git:**
@@ -60,7 +61,6 @@ git rm --cached <file>
 ```
 ## git checkout
 Cambiar de rama o restaurar archivos en el árbol de trabajo.
-
 Cambiar a una rama específica:
 ```bash
 git checkout <nombre rama>
