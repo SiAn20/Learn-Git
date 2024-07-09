@@ -213,3 +213,21 @@ Actualizar la rama con los cambios más recientes del repositorio remoto origin
 ```bash 
 git pull origin <nombre rama>
 ```
+# LLAVE SSH
+Recomendable hacerlo en el directorio home, no en algun proyecto.
+Crear la llave:
+```bash 
+ssh-keygen -t rsa -b 4096 -C "<Tu correo>"
+```
+Ver el pid de la llave:
+```bash 
+eval $(ssh-agent -s)
+```
+Vamos al directorio donde se creo la llave ("cd /.ssh" en caso de ser home)
+```bash 
+ssh-add ~/.ssh/id_rsa
+```
+Conectar nuestro repositorio local a la ssh:
+```bash 
+git remote set-url origin <URL llave ssh GitHub>
+```
