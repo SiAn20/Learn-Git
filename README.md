@@ -11,6 +11,7 @@ git config --global user.email "<Tu correo>"
  Comprobar configuracón de Git:
 ```bash
 git config --list
+git config -l
 ```
 **repositorio:**
 Almacen de versiones de los ficheros de un proyecto y sus históricos.
@@ -60,6 +61,10 @@ git rm --cached <file>
 ## git checkout
 Cambiar de rama o restaurar archivos en el árbol de trabajo.
 
+Cambiar a una rama específica:
+```bash
+git checkout <nombre rama>
+```
 Restaurar un Archivo a un Commit Específico:
 ```bash
 git checkout <commitID>
@@ -86,6 +91,10 @@ git commit -m "<Título>" -m "<descripción>"
 Para sobreescribir la descripcion del ultimo commit, cambiando el ID y ocultando el commit cambiado:
   ```bash
 git commit --ammend -m "<descripción>"
+```
+Realizar dos acciones de manera combinada, agregar (stages) y confirmar (commits) los cambios realizados en el repositorio:
+  ```bash
+git commit -am "<descripción>"
 ```
 ## git log
 Ver el historial de commits en el repositorio Git.
@@ -119,6 +128,10 @@ git branch -D <nombre Rama>
 Crear una nueva rama:
 ```bash
 git branch <nombre de nueva rama>
+```
+Renombrar una rama en Git. La opción -M es un atajo para --move --force, lo que significa que Git forzará el renombramiento incluso si una rama con el nuevo nombre ya existe.
+```bash
+git branch -M <nombre de nueva rama>
 ```
 **Rama de git:**
 Es un snapshot, para bifurcaciones y desarrollo no lineal, colaborativo e independiente.
@@ -172,19 +185,31 @@ Eliminar un enlace:
 ```bash 
 git remote remove origin
 ```
+Cambia la URL del remoto origin a una nueva URL:
+ ```bash 
+git remote set-url origin <URL repositorio GitHub>
+```
 ## git push 
 Una vez que los repositorios esten enlazados se sicronizan los cambios del repositorio local y remoto, puede usarse uno de los siguientes:
 ```bash 
 git push --all
 git push origin <nombre Rama>
 ```
+Subir los cambios locales de una rama específica a un repositorio remoto, y al mismo tiempo, establece una relación de seguimiento entre la rama local y la rama remota:
+```bash 
+git push -u origin <nombre Rama>
+```
 ## git clone
 Clonar un repositorio con todas sus ramas y archivos:
 ```bash 
 git clone <URL repositorio GitHub>
 ```
-## git pullcd ..
-Descargar cambios del repositorio remoto al local.
+## git pull
+Descargar cambios del repositorio remoto(GitHub) al local.
 ```bash 
-git remote -v
+git pull
+```
+Actualizar la rama con los cambios más recientes del repositorio remoto origin
+```bash 
+git pull origin <nombre rama>
 ```
