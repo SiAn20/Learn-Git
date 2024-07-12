@@ -24,96 +24,12 @@ Sistema que registra cada cambio que hacemos, permite tener un historico de los 
 (Concurrent Version System), es el primer control de versiones.
 
 # COMANDOS
-## git init
-Comando para inicializar Git en un directorio. Existen 2 formas.
-```bash
-git init <nombre Proyecto>
-cd <Proyecto>
-```
-```bash
-cd <directorio de Proyecto>
-git init
-```
 ## git add
 Indica a Git que quieres incluir actualizaciones en un archivo/directorio. Pasa de Modified a Staged.
 ```bash
 git add .
 git add <file>
 ```
-## git status
-Descripción del árbol de trabajo y ver el estado de los archivos.
-```bash
-git status
-```
-**Estados de git:**
-1. **Modified:** Archivos con cambios no confirmados.
-2. **Staged:** Archivo marcado como preparado para ser confirmado.
-3. **Commited:** Archivo grabado en el repositorio local (commit).
-## git rm
-Eliminar archivos del índice de Git y del árbol de trabajo.
-```bash
-git rm <file>
-git rm <file1> <file1>
-```
-Para conservar el archivo y solo eliminar el ultimo add:
-```bash
-git rm --cached <file>
-```
-## git checkout
-Cambiar de rama o restaurar archivos en el árbol de trabajo.
-Cambiar a una rama específica:
-```bash
-git checkout <nombre rama>
-```
-Restaurar un Archivo a un Commit Específico:
-```bash
-git checkout <commitID>
-```
-## git restore
-Restaura un archivo al estado del último commit.
- ```bash
-git restore <file>
-```
-Quitar un archivo del área de staged y restaurarlo al estado del último commit.
-  ```bash
-git restore --staged <file>
-```
-## git commit
-**Commit:** 
-Registrar cambios del repositorio. Como una fotografía con autor, fecha y localización.
-
-Confirmar los cambios realizados en el repositorio:
-  ```bash
-git commit
-git commit -m "<descripción>"
-git commit -m "<Título>" -m "<descripción>"
-```
-Para sobreescribir la descripcion del ultimo commit, cambiando el ID y ocultando el commit cambiado:
-  ```bash
-git commit --ammend -m "<descripción>"
-```
-Realizar dos acciones de manera combinada, agregar (stages) y confirmar (commits) los cambios realizados en el repositorio:
-  ```bash
-git commit -am "<descripción>"
-```
-## git log
-Ver el historial de commits en el repositorio Git.
-  ```bash
-git log
-```
-Ver solo descripcion de los commits:
-  ```bash
-git log --oneline
-```
-Ver los commits de forma grafica con conexiones:
-  ```bash
-git log --graph
-```
-```bash
-git --graph --oneline
-```
-**Head:** 
-Puntero que referencia el punto actual en el historial de cambios.
 ## git branch
 Ver ramas disponibles:
 ```bash
@@ -138,15 +54,84 @@ Es un snapshot, para bifurcaciones y desarrollo no lineal, colaborativo e indepe
 
 **Conflictos a fusionar 2 Ramas:**
 Se da cuando Git no puede determinar que cambio es mas importante que otro.
-## git switch
-Ingresar a una rama:
-```bash 
-git switch <nombre Rama>
+## git checkout
+Cambiar de rama o restaurar archivos en el árbol de trabajo.
+Cambiar a una rama específica:
+```bash
+git checkout <nombre rama>
 ```
-Crear e ingresar a la nueva rama:'
-```bash 
-git switch -c <nombre Rama>
+Restaurar un Archivo a un Commit Específico:
+```bash
+git checkout <commitID>
 ```
+## git clone
+Clonar un repositorio con todas sus ramas y archivos:
+```bash 
+git clone <URL repositorio GitHub>
+```
+## git commit
+**Commit:** 
+Registrar cambios del repositorio. Como una fotografía con autor, fecha y localización.
+
+Confirmar los cambios realizados en el repositorio:
+  ```bash
+git commit
+git commit -m "<descripción>"
+git commit -m "<Título>" -m "<descripción>"
+```
+Para sobreescribir la descripcion del ultimo commit, cambiando el ID y ocultando el commit cambiado:
+  ```bash
+git commit --ammend -m "<descripción>"
+```
+Realizar dos acciones de manera combinada, agregar (stages) y confirmar (commits) los cambios realizados en el repositorio:
+  ```bash
+git commit -am "<descripción>"
+```
+## git diff
+Ver cambios no preparados:
+```bash 
+git diff
+```
+Ver diferencias:
+```bash 
+git diff <commit1> <commit2>
+git diff <rama1> <rama2>
+```
+## git init
+Comando para inicializar Git en un directorio. Existen 2 formas.
+```bash
+git init <nombre Proyecto>
+cd <Proyecto>
+```
+```bash
+cd <directorio de Proyecto>
+git init
+```
+## git log
+Ver el historial de commits en el repositorio Git.
+  ```bash
+git log
+```
+Ver todo el historial de commits en el repositorio Git.
+  ```bash
+git log --all
+```
+Ver solo descripcion de los commits:
+  ```bash
+git log --oneline
+```
+Ver los commits de forma grafica con conexiones:
+  ```bash
+git log --graph
+```
+```bash
+git --graph --oneline
+git log --all --graph
+git log --all --graph --decorate
+git log --all --graph --decorate --oneline
+```
+**Head:** 
+Puntero que referencia el punto actual en el historial de cambios.
 ## git merge
 Traer los cambios de una rama a la rama actual:
  ```bash 
@@ -167,6 +152,25 @@ git merge --no-commit
 Git creará un commit de fusión adicional:
  ```bash 
 git merge <nombre Rama> --no--ff
+```
+## git push 
+Una vez que los repositorios esten enlazados se sicronizan los cambios del repositorio local y remoto, puede usarse uno de los siguientes:
+```bash 
+git push --all
+git push origin <nombre Rama>
+```
+Subir los cambios locales de una rama específica a un repositorio remoto, y al mismo tiempo, establece una relación de seguimiento entre la rama local y la rama remota:
+```bash 
+git push -u origin <nombre Rama>
+```
+## git pull
+Descargar cambios del repositorio remoto(GitHub) al local.
+```bash 
+git pull
+```
+Actualizar la rama con los cambios más recientes del repositorio remoto origin
+```bash 
+git pull origin <nombre rama>
 ```
 ## git remote
 Enlazar un repositorio local con uno remoto, un repositorio local puede tener enlazados varios repsitorios remotos:
@@ -189,30 +193,54 @@ Cambia la URL del remoto origin a una nueva URL:
  ```bash 
 git remote set-url origin <URL repositorio GitHub>
 ```
-## git push 
-Una vez que los repositorios esten enlazados se sicronizan los cambios del repositorio local y remoto, puede usarse uno de los siguientes:
-```bash 
-git push --all
-git push origin <nombre Rama>
+## git restore
+Restaura un archivo al estado del último commit.
+ ```bash
+git restore <file>
 ```
-Subir los cambios locales de una rama específica a un repositorio remoto, y al mismo tiempo, establece una relación de seguimiento entre la rama local y la rama remota:
-```bash 
-git push -u origin <nombre Rama>
+Quitar un archivo del área de staged y restaurarlo al estado del último commit.
+  ```bash
+git restore --staged <file>
 ```
-## git clone
-Clonar un repositorio con todas sus ramas y archivos:
-```bash 
-git clone <URL repositorio GitHub>
+## git rm
+Eliminar archivos del índice de Git y del árbol de trabajo.
+```bash
+git rm <file>
+git rm <file1> <file1>
 ```
-## git pull
-Descargar cambios del repositorio remoto(GitHub) al local.
-```bash 
-git pull
+Para conservar el archivo y solo eliminar el ultimo add:
+```bash
+git rm --cached <file>
 ```
-Actualizar la rama con los cambios más recientes del repositorio remoto origin
-```bash 
-git pull origin <nombre rama>
+## git show
+Ver detalles de un commit específico:
+```bash
+git show <SHA_del_commit>
 ```
+Ver el commit más reciente:
+```bash
+git show
+```
+## git status
+Descripción del árbol de trabajo y ver el estado de los archivos.
+```bash
+git status
+```
+**Estados de git:**
+1. **Modified:** Archivos con cambios no confirmados.
+2. **Staged:** Archivo marcado como preparado para ser confirmado.
+3. **Commited:** Archivo grabado en el repositorio local (commit).
+## git switch
+Ingresar a una rama:
+```bash 
+git switch <nombre Rama>
+```
+Crear e ingresar a la nueva rama:'
+```bash 
+git switch -c <nombre Rama>
+```
+
+
 # LLAVE SSH
 Recomendable hacerlo en el directorio home, no en algun proyecto.
 Crear la llave:
@@ -231,3 +259,47 @@ Conectar nuestro repositorio local a la ssh:
 ```bash 
 git remote set-url origin <URL llave ssh GitHub>
 ```
+
+# GIT TRUCOS
+## alias
+Crear alias o atajos de comandos
+```bash 
+alias <nombre alias>="<comando git>"
+```
+Eliminar una alias:
+```bash 
+unalias <nombre alias>
+```
+## TAGS
+Agregar un tag, el nombre puede ser(v1.0), el PID puede ser de solo 6 dígitos:
+```bash 
+git tag -a <nombre tag> -m "<descripcion>" <PID commit>
+```
+Ver tags:
+```bash 
+git tag
+```
+```bash 
+git show-ref --tags
+```
+Mandar tags a repositorio remoto:
+```bash 
+git push origin --tags
+```
+Eliminar tag:
+```bash 
+git tag -d <nombre tag>
+git push origin --tags
+git push origin :refs/tags/<nombret tag>
+```
+## Manejar ramas
+Ver ramas con sus cambios
+```bash 
+git show-branch
+git show-branch --all
+```
+ver todos los cambios del repositorio con una interfaz gráfica:
+```bash 
+gitk
+```
+
