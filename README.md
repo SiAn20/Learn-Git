@@ -22,6 +22,12 @@ Sistema que registra cada cambio que hacemos, permite tener un historico de los 
 
 **CVS:**
 (Concurrent Version System), es el primer control de versiones.
+## configuraciones extras
+configurar alias:
+  ```bash
+git config --global alias.stats "<comando git sin "git">"
+git stats
+```
 
 # COMANDOS
 ## git add
@@ -29,6 +35,20 @@ Indica a Git que quieres incluir actualizaciones en un archivo/directorio. Pasa 
 ```bash
 git add .
 git add <file>
+```
+## git blame
+Ma última modificación de cada línea en un archivo, mostrando información sobre el commit y el autor.
+  ```bash
+git blame <archivo>
+```
+Ver información mas detallada y legible:
+  ```bash
+git blame -c <archivo>
+```
+Especificar un rango de lineas (del 12 a 24):
+  ```bash
+git blame <archivo> -L12,24
+git blame <archivo> -L12,24 -c
 ```
 ## git branch
 Ver ramas disponibles:
@@ -97,6 +117,19 @@ Ver diferencias:
 git diff <commit1> <commit2>
 git diff <rama1> <rama2>
 ```
+## git grep
+ver donde y cuantas veces se uso una palabra:
+```bash 
+git grep <palabra>
+```
+Ver en que linea se uso la palabra:
+```bash 
+git grep -n <palabra>
+```
+Cuantas veces aparece la palabra:
+```bash 
+git grep -c <palabra>
+```
 ## git init
 Comando para inicializar Git en un directorio. Existen 2 formas.
 ```bash
@@ -129,6 +162,10 @@ git --graph --oneline
 git log --all --graph
 git log --all --graph --decorate
 git log --all --graph --decorate --oneline
+```
+Buscar la palabra en los comentarios de los commit`s:
+  ```bash
+git log -S "<palabra>"
 ```
 **Head:** 
 Puntero que referencia el punto actual en el historial de cambios.
@@ -172,6 +209,11 @@ Actualizar la rama con los cambios más recientes del repositorio remoto origin
 ```bash 
 git pull origin <nombre rama>
 ```
+## git reflog
+Muestra un registro de todos los cambios que se han hecho en el puntero HEAD.
+```bash 
+git reflog
+```
 ## git remote
 Enlazar un repositorio local con uno remoto, un repositorio local puede tener enlazados varios repsitorios remotos:
  ```bash 
@@ -193,6 +235,11 @@ Cambia la URL del remoto origin a una nueva URL:
  ```bash 
 git remote set-url origin <URL repositorio GitHub>
 ```
+## git reset
+Es una mala practica pero e usa como ultimo recurso.
+regr
+
+git reset  --hard <ID commit>
 ## git restore
 Restaura un archivo al estado del último commit.
  ```bash
@@ -211,6 +258,18 @@ git rm <file1> <file1>
 Para conservar el archivo y solo eliminar el ultimo add:
 ```bash
 git rm --cached <file>
+```
+## git shortlog
+Cuantos comits hizo cada miembro, incluyendo merges:
+  ```bash
+git shortlog -sn
+```
+Cuantos comits hizo cada miembro, incluyendo eliminados y merges:
+  ```bash
+git shortlog -sn --all
+```
+  ```bash
+git shortlog -sn --all --no-merges
 ```
 ## git show
 Ver detalles de un commit específico:
@@ -260,7 +319,7 @@ Conectar nuestro repositorio local a la ssh:
 git remote set-url origin <URL llave ssh GitHub>
 ```
 
-# GIT TRUCOS
+# GIT EXTRA
 ## alias
 Crear alias o atajos de comandos
 ```bash 
@@ -270,7 +329,7 @@ Eliminar una alias:
 ```bash 
 unalias <nombre alias>
 ```
-## TAGS
+## Tags
 Agregar un tag, el nombre puede ser(v1.0), el PID puede ser de solo 6 dígitos:
 ```bash 
 git tag -a <nombre tag> -m "<descripcion>" <PID commit>
@@ -303,3 +362,8 @@ ver todos los cambios del repositorio con una interfaz gráfica:
 gitk
 ```
 
+# GITHUB
+##
+##
+##
+##
