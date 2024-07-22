@@ -237,9 +237,10 @@ git remote set-url origin <URL repositorio GitHub>
 ```
 ## git reset
 Es una mala practica pero e usa como ultimo recurso.
-regr
-
+Restablece HEAD: Mueve el puntero HEAD al commit especificado por <ID commit>.
+ ```bash 
 git reset  --hard <ID commit>
+```
 ## git restore
 Restaura un archivo al estado del último commit.
  ```bash
@@ -363,7 +364,9 @@ gitk
 ```
 
 # GITHUB
-##
-##
-##
-##
+## ISSUES
+## PULL REQUEST
+## ACTIONS
+## PROJECTS
+## WIKI
+## SECURITY
