@@ -68,6 +68,7 @@ git branch <nombre de nueva rama>
 Renombrar una rama en Git. La opción -M es un atajo para --move --force, lo que significa que Git forzará el renombramiento incluso si una rama con el nuevo nombre ya existe.
 ```bash
 git branch -M <nombre de nueva rama>
+git branch -m <Nombre actual de rama><Nombre nuevo de rama>
 ```
 **Rama de git:**
 Es un snapshot, para bifurcaciones y desarrollo no lineal, colaborativo e independiente.
@@ -211,7 +212,7 @@ git pull origin <nombre rama>
 ```
 Si tenemos historial distinto y no se nos permite un pull normal.Para fusionar ambos historiales sin perder los cambios locales, usa:
 ```bash
-git pull origin main --allow-unrelated-histories
+git pull origin <nombre rama> --allow-unrelated-histories
 ```
 ## git reflog
 Muestra un registro de todos los cambios que se han hecho en el puntero HEAD.
