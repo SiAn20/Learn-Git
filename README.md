@@ -209,6 +209,10 @@ Actualizar la rama con los cambios más recientes del repositorio remoto origin
 ```bash 
 git pull origin <nombre rama>
 ```
+Si tenemos historial distinto y no se nos permite un pull normal.Para fusionar ambos historiales sin perder los cambios locales, usa:
+```bash
+git pull origin main --allow-unrelated-histories
+```
 ## git reflog
 Muestra un registro de todos los cambios que se han hecho en el puntero HEAD.
 ```bash 
