@@ -90,6 +90,10 @@ Clonar un repositorio con todas sus ramas y archivos:
 ```bash 
 git clone <URL repositorio GitHub>
 ```
+Para ahorrar disco duro y tiempo al clonar un repositorio, clonando solo la ultima version:
+```bash 
+git clone <URL repositorio GitHub> --depth=1
+```
 ## git commit
 **Commit:** 
 Registrar cambios del repositorio. Como una fotografía con autor, fecha y localización.
