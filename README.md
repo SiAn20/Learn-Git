@@ -379,3 +379,6 @@ gitk
 ## PROJECTS
 ## WIKI
 ## SECURITY
+
+# Recursos
+- Juegos: [Codedex](https://www.codedex.io/git-github)
