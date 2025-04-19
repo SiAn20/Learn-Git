@@ -85,6 +85,11 @@ Restaurar un Archivo a un Commit Específico:
 ```bash
 git checkout <commitID>
 ```
+Crear y cambiar a una nueva rama
+```bash
+git checkout -b <nombre rama>
+```
+
 ## git clone
 Clonar un repositorio con todas sus ramas y archivos:
 ```bash 
@@ -121,6 +126,36 @@ Ver diferencias:
 ```bash 
 git diff <commit1> <commit2>
 git diff <rama1> <rama2>
+```
+## git fetch
+Traer cambios remotos sin fusionar:
+```bash 
+git fetch
+```
+Descarga solo del remoto llamado origin (el predeterminado). Es lo mismo que el anterior si solo tienes un remoto:
+```bash 
+git fetch origin
+```
+Descarga referencias de todos los remotos configurados. Útil si trabajas con más de un remoto (por ejemplo: `origin, upstream`):
+```bash 
+git fetch --all
+```
+Descarga solo una rama específica desde el remoto:
+```bash 
+git fetch <remote> <branch>
+```
+Elimina de tu lista local las ramas remotas que ya no existen en el servidor:
+```bash 
+git fetch --prune
+```
+Simula un fetch sin hacer cambios reales. Solo te muestra lo que bajaría:
+```bash 
+git fetch --dry-run
+```
+Hace un fetch superficial, descargando solo el último commit de cada rama.
+Muy útil para ahorrar espacio si no necesitas el historial completo:
+```bash 
+git fetch --depth=1
 ```
 ## git grep
 ver donde y cuantas veces se uso una palabra:
