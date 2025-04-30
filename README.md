@@ -106,12 +106,12 @@ Registrar cambios del repositorio. Como una fotografía con autor, fecha y local
 Confirmar los cambios realizados en el repositorio:
   ```bash
 git commit
-git commit -m "<descripción>"
+git commit -m "<Título>"
 git commit -m "<Título>" -m "<descripción>"
 ```
-Para sobreescribir la descripcion del ultimo commit, cambiando el ID y ocultando el commit cambiado:
+Para sobreescribir el título del ultimo commit, cambiando el ID y ocultando el commit cambiado:
   ```bash
-git commit --ammend -m "<descripción>"
+git commit --ammend -m "<Título>"
 ```
 Realizar dos acciones de manera combinada, agregar (stages) y confirmar (commits) los cambios realizados en el repositorio:
   ```bash
